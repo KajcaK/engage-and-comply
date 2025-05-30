@@ -1,6 +1,18 @@
 const StoryContainer = () => (
-    <div className="bg-secondary-subtle p-5 border border-dark rounded">
-        <p>Story content</p>
+    <div className="content-container">
+        <div className="card">
+            <div className="card-body">
+                <div className="card-text">
+                    <p>
+                        Placeholder text for immersive storytelling
+                        With multiple
+                        lines
+                        and more...
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
 );
 

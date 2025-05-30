@@ -1,0 +1,12 @@
+.content-container{
+    background: rgba(0, 0, 0, 0.55);
+    padding: 2rem;
+    border: solid black 3px;
+    border-radius: 10px;
+    height: 90vh;
+    width: 45%;
+}
+
+.app-layout{
+    background: linear-gradient(315deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(263, 67%, 55%, 1) 100%);
+}

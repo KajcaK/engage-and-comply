@@ -4,9 +4,11 @@ import AppLayout from "./layouts/AppLayout.jsx";
 function App() {
 
   return (
-    <>
-      <AppLayout />
-    </>
+    <div className="app-background">
+        <div className="">
+            <AppLayout />
+        </div>
+    </div>
   )
 }
 

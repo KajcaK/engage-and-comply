@@ -1,12 +1,72 @@
-.content-container{
-    background: rgba(0, 0, 0, 0.55);
+.app-background {
+    background-image: url("/src/assets/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app-gradient {
+    background: linear-gradient(
+            0deg,
+            hsla(123, 39%, 19%, 0.7) 0%,
+            hsla(123, 28%, 27%, 0.7) 46%,
+            hsla(99, 36%, 55%, 0.7) 95%
+    );
+    overflow: scroll;
+}
+
+.navbar-container{
+    border-radius: 0 0 10px 10px;
+    height: 5rem;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    margin-bottom: 5rem;
+}
+
+.navbar-collapse{
+    border-radius: 0 0 10px 10px;
+}
+
+.content-wrapper{
+    background: rgba(0, 0, 0, 0.5);
     padding: 2rem;
     border: solid black 3px;
     border-radius: 10px;
-    height: 90vh;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.content-container{
+    height: 75vh;
     width: 45%;
 }
 
-.app-layout{
-    background: linear-gradient(315deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(263, 67%, 55%, 1) 100%);
+.upload-content{
+    height: 20rem;
+    width: 35rem;
+}
+
+.upload-title{
+}
+
+@media (max-width: 991px) {
+    .chat-wrapper{
+        padding: 1rem;
+        height: 90vh;
+    }
+
+    .content-container{
+        width: 90%;
+        margin: 0.5rem;
+    }
+
+    .content-wrapper{
+        width: 90%;
+    }
+
+    .navbar-container{
+        margin-bottom: 1rem;
+    }
 }

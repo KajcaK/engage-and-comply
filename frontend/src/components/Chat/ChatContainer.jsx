@@ -8,8 +8,24 @@ const ChatContainer = () => {
     }
 
     const handleSubmit = () => {
-        setInputValue(inputValue);
         console.log('Input value submitted:', inputValue);
+
+        fetch('', { // API endpoint
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(inputValue.trim()) //If API expects JSON => JSON.stringify({ link: inputLink })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response from backend:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
         setInputValue("");
     }
 
@@ -19,23 +35,22 @@ const ChatContainer = () => {
         }
     }
 
-
     return (
-        <div className="content-container d-flex flex-column justify-content-between">
+        <div className="content-container d-flex flex-column justify-content-between content-wrapper">
             <div className="card w-100 h-100 mb-4">
                 <div className="card-body">
 
                 </div>
             </div>
             <div className="d-flex">
-                <textarea
+                <input
+                       type="text"
                        value={inputValue}
                        onChange={handleInputChange}
                        onKeyDown={handleKeyDown}
-                       placeholder="Type here"
+                       placeholder="Type your message here"
                        className="form-control"
-                       rows="2"
-                ></textarea>
+                ></input>
                 <button className="btn btn-dark btn-lg ms-2"
                         onClick={handleSubmit}
                 >

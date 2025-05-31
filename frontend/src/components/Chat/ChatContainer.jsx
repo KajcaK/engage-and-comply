@@ -2,6 +2,7 @@ import {useState} from "react";
 
 const ChatContainer = () => {
     const [inputValue, setInputValue] = useState("");
+    const [responseData, setResponseData] = useState(null);
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -29,9 +30,7 @@ const ChatContainer = () => {
 }) //If API expects JSON => JSON.stringify({ link: inputLink })
         })
             .then(response => response.json())
-            .then(data => {
-                console.log('Response from backend:', data);
-            })
+            .then(data => (setResponseData)(data.output.result))
             .catch(error => {
                 console.error('Error:', error);
             });
@@ -49,7 +48,7 @@ const ChatContainer = () => {
         <div className="content-container d-flex flex-column justify-content-between content-wrapper overflow-scroll">
             <div className="card w-100 h-100 mb-4">
                 <div className="card-body">
-
+                    <p>{responseData}</p>
                 </div>
             </div>
             <div className="d-flex">

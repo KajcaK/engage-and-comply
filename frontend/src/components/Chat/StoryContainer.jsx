@@ -16,7 +16,7 @@ const StoryContainer = () => {
 
     const questions = (
         <div>
-            <p className="ms-2">{input.question}</p>
+            <p className="ms-2 lead">{input.question}</p>
             <hr/>
             <ul>
                 {input.answer

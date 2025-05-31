@@ -1,20 +1,5 @@
 import {useEffect, useState} from "react";
 import {Card} from "react-bootstrap";
-import axios from "axios";
-
-const apiGet = axios.create({
-    baseURL: 'http://localhost:8000',
-});
-
-export const fetchData = async () => {
-    try {
-        const response = await apiGet.get('/chat/invoke/');
-        return response.data;
-    } catch (error) {
-        console.log('Error fetching the data:', error);
-        return null;
-    }
-};
 
 const ChatContainer = () => {
     const [inputValue, setInputValue] = useState("");
@@ -24,15 +9,6 @@ const ChatContainer = () => {
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     }
-
-    useEffect(() => {
-        const getData = async () => {
-            const data = await fetchData();
-            setResponseData(data);
-        };
-
-        getData();
-    }, []);
 
     const handleSubmit = () => {
         console.log('Input value submitted:', inputValue);
@@ -57,10 +33,12 @@ const ChatContainer = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Response for backend:', data);
+                setResponseData(data.output.result)
+                console.log('Response from backend:', data);
+
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.log('Error:', error)
             });
         setInputMessage(inputValue);
         setInputValue("");
@@ -84,32 +62,31 @@ const ChatContainer = () => {
                         padding: '1rem',
                         height: '100%'
                     }}>
-
-                        {/* Output */}
-                        {responseData ? (
-                            <div className="message-left-wrapper">
-                                <Card className="message-left">
-                                    <Card.Body style={{ background: '#d9d9d9' }}>
-                                        {responseData.output}
+                        {/* Input */}
+                        {inputMessage ? (
+                            <div className="message-right-wrapper">
+                                <Card className="message-right message-wrapper">
+                                    <Card.Body style={{background: 'rgba(128, 182, 99, 0.6)'}}>
+                                        {inputMessage}
                                     </Card.Body>
                                 </Card>
                             </div>
                         ) : (
-                            <p>Loading...</p>
+                            <></>
                         )}
 
-                        {/* Input */}
-                        <div className="message-right-wrapper">
-                            <Card className="message-right">
-                                <Card.Body style={{background: 'rgba(128, 182, 99, 0.6)'}}>
-                                    {inputMessage}
-                                </Card.Body>
-                            </Card>
-                        </div>
-
-                        <div className="loading-next-message">
-                            <p>A.C.E. is typing...</p>
-                        </div>
+                        {/* Output */}
+                        {responseData ? (
+                            <div className="message-left-wrapper">
+                                <Card className="message-left message-wrapper">
+                                    <Card.Body style={{background: 'rgba(128, 182, 99, 0.6)'}}>
+                                        {responseData}
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        ) : (
+                            <p className="text-white loading-next-message">Loading...</p>
+                        )}
 
                     </div>
                 </div>

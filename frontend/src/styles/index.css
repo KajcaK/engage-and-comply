@@ -82,6 +82,7 @@
     flex-direction: column;
     justify-content: start;
     margin-top: auto;
+    font-size: 1.5rem;
 }
 
 .message-left-wrapper{
@@ -100,6 +101,10 @@
 
 .message-right{
     max-width: 70%;
+}
+
+.message-wrapper{
+    box-shadow: 0 4px 15px rgba(173, 173, 173, 0.5);
 }
 
 /* Upload */

@@ -19,4 +19,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Document
-        fields = ['title', 'publish_date', 'pdf_file', 'users']
+        fields = ['title', 'publish_date', 'pdf_text', 'users']

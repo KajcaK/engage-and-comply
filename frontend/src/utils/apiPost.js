@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const apiPost = axios.create({
-    baseURL: '', //add URL
+    baseURL: 'http://localhost:8000/chat/invoke', //add URL
 });

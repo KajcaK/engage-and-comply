@@ -10,13 +10,23 @@ const ChatContainer = () => {
     const handleSubmit = () => {
         console.log('Input value submitted:', inputValue);
 
-        fetch('', { // API endpoint
+        fetch('http://localhost:8000/chat/invoke', { // API endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             mode: 'cors',
-            body: JSON.stringify(inputValue.trim()) //If API expects JSON => JSON.stringify({ link: inputLink })
+            body: JSON.stringify({
+  "input": {
+    "input": inputValue,
+    "history": []
+  },
+  "config": {
+    "configurable": {
+      "session_id": "user-session-001"
+    }
+  }
+}) //If API expects JSON => JSON.stringify({ link: inputLink })
         })
             .then(response => response.json())
             .then(data => {

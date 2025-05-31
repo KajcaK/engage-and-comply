@@ -50,16 +50,17 @@ const UploadPagePDF = () => {
                     <h1 className="upload-title">Upload File</h1>
                 </div>
                 <div className="row">
-                    <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Group controlId="formFile" className="mb-3 ">
                         <Form.Label column={"sm"} className="text-light">Select PDF file</Form.Label>
                         <Form.Control
                             size="lg"
                             type="file"
                             required
                             onChange={handleFileChange}
+                            className="glow-input"
                         />
                     </Form.Group>
-                    <Button className="btn-dark mt-2 btn-lg" onClick={handleUpload}>Upload</Button>
+                    <Button className="btn-dark mt-2 btn-lg glow-button" onClick={handleUpload}>Upload</Button>
                 </div>
             </div>
         </div>

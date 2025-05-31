@@ -46,11 +46,60 @@
     width: 45%;
 }
 
+.glow-button {
+    box-shadow: 0 0 10px rgb(50, 88, 51);
+    border: none;
+    transition: 0.3s;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 15px rgba(128, 182, 99, 0.78), 0 0 25px rgba(50, 88, 51, 0.75);
+}
+
+.glow-input {
+    box-shadow: 0 0 10px rgb(50, 88, 51);
+    border: none;
+    transition: 0.3s;
+}
+
+.glow-input:hover {
+    box-shadow: 0 0 15px rgba(128, 182, 99, 0.78), 0 0 25px rgba(50, 88, 51, 0.75);
+}
+
+.glow-input:focus {
+    box-shadow: 0 0 15px rgba(128, 182, 99, 0.89), 0 0 25px rgba(50, 88, 51, 0.9) !important;
+}
+
 /* Chat */
 .story-image{
     height: 22rem;
     width: 22rem;
     margin-bottom: 2rem;
+}
+
+.loading-next-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: auto;
+}
+
+.message-left-wrapper{
+    display: flex;
+    justify-content: start;
+}
+
+.message-left{
+    max-width: 70%;
+}
+
+.message-right-wrapper{
+    display: flex;
+    justify-content: end;
+}
+
+.message-right{
+    max-width: 70%;
 }
 
 /* Upload */

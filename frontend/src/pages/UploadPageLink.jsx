@@ -49,9 +49,9 @@ const UploadPageLink = () => {
                             onChange={handleInputChange}
                             onKeyDown={handleKeyDown}
                             placeholder="Enter URL to file here"
-                            className="form-control">
+                            className="form-control glow-input">
                         </input>
-                        <button className="btn btn-dark btn-lg ms-2"
+                        <button className="btn btn-dark btn-lg ms-2 glow-button"
                                 onClick={handleSubmit}
                         >
                             Submit

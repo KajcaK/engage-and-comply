@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="app-background">
-        <div className="">
+        <div className="app-gradient">
             <AppLayout />
         </div>
     </div>

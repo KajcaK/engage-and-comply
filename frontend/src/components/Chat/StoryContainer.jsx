@@ -2,10 +2,19 @@ const StoryContainer = () => (
     <div className="content-container content-wrapper overflow-scroll">
         <div className="card ">
             <div className="card-body ">
-                <div className="card-text ">
+                <div className="card-text text-center">
+                    <img src="/src/assets/images/image-placeholder.svg " alt="story-image" className="story-image"/>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
+                        pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
+                        sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa
+                        nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+                        sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
+                        pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
+                        sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa
+                        nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+                        sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
                     </p>
                 </div>
 

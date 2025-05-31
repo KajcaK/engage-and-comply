@@ -36,7 +36,7 @@ const ChatContainer = () => {
     }
 
     return (
-        <div className="content-container d-flex flex-column justify-content-between content-wrapper">
+        <div className="content-container d-flex flex-column justify-content-between content-wrapper overflow-scroll">
             <div className="card w-100 h-100 mb-4">
                 <div className="card-body">
 

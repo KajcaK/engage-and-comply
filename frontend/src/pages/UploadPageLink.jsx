@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const UploadPage = () => {
+const UploadPageLink = () => {
     const [inputLink, setInputLink] = useState("");
 
     const handleInputChange = (e) => {
@@ -36,8 +36,8 @@ const UploadPage = () => {
     }
 
     return (
-        <div className="d-flex flex-column justify-content-center align-items-center p-3">
-            <div className="content-wrapper upload-content align-content-center">
+        <div className="d-flex flex-column justify-content-center align-items-center p-3 mt-5">
+            <div className="content-wrapper upload-content align-content-center mt-5">
                 <div className="row text-center mb-5">
                     <h1 className="upload-title">Upload Link</h1>
                 </div>
@@ -63,4 +63,4 @@ const UploadPage = () => {
     );
 };
 
-export default UploadPage
+export default UploadPageLink

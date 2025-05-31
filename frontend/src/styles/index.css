@@ -1,5 +1,6 @@
+/* Layout */
 .app-background {
-    background-image: url("/src/assets/background.svg");
+    background-image: url("/src/assets/images/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -7,13 +8,14 @@
 .app-gradient {
     background: linear-gradient(
             0deg,
-            hsla(123, 39%, 19%, 0.7) 0%,
-            hsla(123, 28%, 27%, 0.7) 46%,
-            hsla(99, 36%, 55%, 0.7) 95%
+            hsla(123, 39%, 19%, 0.5) 0%,
+            hsla(123, 28%, 27%, 0.5) 46%,
+            hsla(99, 36%, 55%, 0.5) 95%
     );
     overflow: scroll;
 }
 
+/* NavBar */
 .navbar-container{
     border-radius: 0 0 10px 10px;
     height: 5rem;
@@ -28,6 +30,7 @@
     border-radius: 0 0 10px 10px;
 }
 
+/* Content */
 .content-wrapper{
     background: rgba(0, 0, 0, 0.5);
     padding: 2rem;
@@ -43,12 +46,21 @@
     width: 45%;
 }
 
+/* Chat */
+.story-image{
+    height: 22rem;
+    width: 22rem;
+    margin-bottom: 2rem;
+}
+
+/* Upload */
 .upload-content{
     height: 20rem;
     width: 35rem;
 }
 
 .upload-title{
+    color: white;
 }
 
 @media (max-width: 991px) {
@@ -67,6 +79,12 @@
     }
 
     .navbar-container{
+        margin-bottom: 1rem;
+    }
+
+    .story-image{
+        width: 15rem;
+        height: 15rem;
         margin-bottom: 1rem;
     }
 }

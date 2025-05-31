@@ -3,7 +3,6 @@ import {Card} from "react-bootstrap";
 
 const ChatContainer = () => {
     const [inputValue, setInputValue] = useState("");
-    const [inputMessage, setInputMessage] = useState("");
     const [responseData, setResponseData] = useState(null);
 
     const handleInputChange = (e) => {
@@ -32,11 +31,7 @@ const ChatContainer = () => {
             })
         })
             .then(response => response.json())
-            .then(data => {
-                setResponseData(data.output.result)
-                console.log('Response from backend:', data);
-
-            })
+            .then(data => (setResponseData)(data.output.result))
             .catch(error => {
                 console.log('Error:', error)
             });
@@ -51,44 +46,10 @@ const ChatContainer = () => {
     }
 
     return (
-        <div
-            className="content-container d-flex flex-column justify-content-between content-wrapper overflow-scroll p-3">
-            <div className="card w-100 h-100 mb-4 bg-transparent border-0 p-0">
-                <div className="card-body p-0">
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1rem',
-                        padding: '1rem',
-                        height: '100%'
-                    }}>
-                        {/* Input */}
-                        {inputMessage ? (
-                            <div className="message-right-wrapper">
-                                <Card className="message-right message-wrapper">
-                                    <Card.Body style={{background: 'rgba(128, 182, 99, 0.6)'}}>
-                                        {inputMessage}
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        ) : (
-                            <></>
-                        )}
-
-                        {/* Output */}
-                        {responseData ? (
-                            <div className="message-left-wrapper">
-                                <Card className="message-left message-wrapper">
-                                    <Card.Body style={{background: 'rgba(128, 182, 99, 0.6)'}}>
-                                        {responseData}
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        ) : (
-                            <p className="text-white loading-next-message">Loading...</p>
-                        )}
-
-                    </div>
+        <div className="content-container d-flex flex-column justify-content-between content-wrapper overflow-scroll">
+            <div className="card w-100 h-100 mb-4">
+                <div className="card-body">
+                    <p>{responseData}</p>
                 </div>
             </div>
             <div className="d-flex">

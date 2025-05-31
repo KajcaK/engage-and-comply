@@ -1,0 +1,43 @@
+{
+  "questions": {
+    "documents": [
+      [
+        [
+          "id",
+          "f2c866f4-e6fb-4634-b6e8-260c04a7710e"
+        ],
+        [
+          "metadata",
+          {
+            "producer": "Adobe PDF Library 17.0",
+            "creator": "Adobe InDesign 20.2 (Macintosh)",
+            "creationdate": "2025-05-02T09:58:26+01:00",
+            "moddate": "2025-05-02T10:06:32+01:00",
+            "title": "PACT Methodology Version 3.0",
+            "trapped": "/False",
+            "source": "./backend/fixtures/pact-methodology.pdf",
+            "total_pages": 96,
+            "page": 94,
+            "page_label": "95"
+          }
+        ],
+        [
+          "page_content",
+          "tackle inequality. \nWe accelerate value chain transformation \nacross key sectors and reshape the financial \nsystem to reward sustainable leadership and \naction through a lower cost of capital. Through \nthe exchange of best practices, improving \nperformance, accessing education, forming \npartnerships, and shaping the policy agenda, \nwe drive progress in businesses and sharpen the \naccountability of their performance.\nCopyright © WBCSD, March 2025\nwww.wbcsd.org\nFollow us on LinkedIn."
+        ],
+        [
+          "type",
+          "Document"
+        ]
+      ],
+      [
+        [
+          "id",
+          "c7702c0d-a414-4fd8-8bbe-8790277d6603"
+        ]
+      ]
+    ],
+    "question": "\nHere are 5 questions based on the core elements and highlights of the provided text:\n",
+    "answer": "\n1.  According to WBCSD, what are the three main issues they aim to address and transform systems related to (as mentioned near the start and in the \"About\" section)?\n2.  What specific mechanism does WBCSD highlight for leveraging financial systems and rewarding sustainable business practices?\n3.  Beyond financial incentives, WBCSD lists several methods for driving progress within businesses. Can you list those methods, as mentioned in the main text?\n4.  What is the stated overarching goal of the World Business Council for Sustainable Development for society by the mid-21st century, concerning the number of people and the state of the environment?\n5.  The text mentions involving a specific number of leading businesses as part of the WBCSD community. What is that number?"
+  }
+}

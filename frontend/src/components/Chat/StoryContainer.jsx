@@ -1,26 +1,48 @@
-const StoryContainer = () => (
-    <div className="content-container content-wrapper overflow-scroll">
-        <div className="card ">
-            <div className="card-body ">
-                <div className="card-text text-center">
-                    <img src="/src/assets/images/image-placeholder.svg " alt="story-image" className="story-image"/>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
-                        pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
-                        sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa
-                        nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
-                        sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
-                        pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
-                        sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa
-                        nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
-                        sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-                    </p>
-                </div>
+import {useEffect, useState} from "react";
 
+const StoryContainer = () => {
+
+    const [input, setInput] = useState(null);
+
+    useEffect(() => {
+        fetch('/testQuestions.json')
+            .then(response => response.json())
+            .then(data => setInput(data.questions))
+            .catch(error => console.error('Error loading JSON:', error));
+    }, []);
+    console.log(input)
+
+    if (!input || !input.question || !input.answer) return <p>Loading...</p>;
+
+    const questions = (
+        <div>
+            <p className="ms-2">{input.question}</p>
+            <hr/>
+            <ul>
+                {input.answer
+                    .split('\n')
+                    .filter(line => line.trim() !== '')
+                    .map((line, index) => (
+                        <li className="mt-2" key={index}>{line}</li>
+                    ))}
+            </ul>
+        </div>
+    );
+    console.log(input.answer)
+
+    return (
+        <div className="content-container content-wrapper overflow-scroll">
+            <div className="card ">
+                <div className="card-body ">
+                    <div className="card-text text-center">
+                        <div className="text-start">
+                            {questions}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default StoryContainer;

@@ -31,4 +31,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
+    path('documents/<int:document_id>/generate_questions/', views.generate_test_questions, name='generate_test_questions'),
 ]

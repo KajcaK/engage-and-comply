@@ -1,95 +1,50 @@
-🌱 Green Hackathon Project — Readable AI: Turn Complex PDFs into Cool Stories
+# A.C.E
 
-Theme: Engage and Comply
-Making sustainability documents more accessible, engaging, and human.
+This project has been done during the [GreenHack 2025](https://greenhack.eu/) hackathon on 30-31th of May 2025 by this repo's collaborators as a solution to the *Engage & Comply* challenge from Novartis.
 
-📘 Overview
+**A.C.E.** -- AI for Compliance Engagement. The project is an LLM-based web application that takes a (large and information-dense) PDF file as an input, and transforms it into a series of case studies for easy learning of compliance standards and documentation. The program uses LangChain and an LLM with RAG to process documents and interact with the user.
 
-Readable AI is a web platform developed for the Green Hackathon with the mission to transform dense sustainability or compliance-related PDFs into simplified and engaging narratives using Large Language Models (LLMs).  
-
-Whether it’s an environmental report or a CSR strategy document, our platform helps users—especially non-technical stakeholders—understand the key takeaways in a fun, narrative format.
-
-🎯 Objective
-
-✅ Empower compliance through engagement  
-✅ Break down complex documents into stories  
-✅ Improve readability and comprehension of green initiatives  
-
-💻 How It Works
+## Workflow
 
 1. The user uploads a PDF document via the platform.
 2. The backend processes the content using LangChain and LLMs.
-3. The LLM generates a story-like summary from the original content.
-4. The summary is displayed in a friendly chat interface and structured narrative view.
+3. The LLM generates a story-like summary from the original content and retells it through the chat interface, also asking the user for engagement.
 
-🧰 Tech Stack
+## Future plans
 
-🌐 Frontend
+1. Add the capability to show a report of how much of the material has been covered.
+2. Add learning assessments
+3. Support citation of document paragraphs when giving the information to the user
+4. Use a smaller model for running locally
+
+## Technologies
+
+### 🌐 Frontend
 - React.js: Interactive UI
-- Bootstrap: Styling and layout
-- ChatContainer.jsx and StoryContainer.jsx: Components for chat interaction and story display
+- Django: Backend REST API
+- Langserve & FastAPI: LLM Server
+- LangChain
+- Featherless API: Serverless running of the LLM
+- Qdrant: Vector database
 
-🧠 Backend
-- Python with FastAPI: Handles PDF processing and LLM communication
+### 🧠 Backend
 - LangChain: Chains LLMs with PDF data
-- OpenAI or HuggingFace Models: Generates human-friendly summaries
+- GLM-4-32B-0414: LLM
 - PyMuPDF / pdfplumber: For PDF text extraction
 - LangServe: Exposes LangChain pipelines as HTTP APIs
 
-📦 Requirements
-Key dependencies listed in requirements.txt include:
-- langchain
-- fastapi
-- openai or huggingface
-- pymupdf
+
+## Usage
+
+### Requirements
+
+Install requirements listed in the `requirements.txt` file: `pip install -r requirements` (recommended to run in a python venv). Some of the key requirements are:
+- langchain (langchain-qdrant, langchain-openai...)
+- fastAPI
+- PyPDF2
 - uvicorn (server)
-- aiofiles, httpx, dotenv, etc.
 
-### 🚀 Getting Started
+### Running
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/readable-ai.git
-   cd readable-ai
-   ```
+TODO
 
-2. **Backend setup**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Run the FastAPI server**
-   ```bash
-   uvicorn server:app --reload
-   ```
-
-4. **Frontend setup**  
-   In the `/frontend` folder (assuming Vite or similar setup):
-   ```bash
-   npm install
-   npm run dev
-   ```
-
-
-🧪 Sample Workflow
-
-1. User uploads a PDF about "Carbon Footprint Management".
-2. The LLM reads the document and outputs a story like:
-   "Once upon a time, a company wanted to shrink its carbon shadow..."
-3. The result is displayed in two formats:
-   - Conversational style (chat bubble)
-   - Structured Q&A/story breakdown
-
-🌍 Why It Matters
-
-By simplifying technical language and turning data into stories, we help organizations:
-- Increase employee engagement
-- Improve green initiative comprehension
-- Enhance compliance through transparency
-
-🙌 Team & Contribution
-
-Built with love during the Green Hackathon 💚  
-We welcome contributions! Open an issue or pull request to collaborate.
